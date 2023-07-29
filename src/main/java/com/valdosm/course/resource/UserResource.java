@@ -13,7 +13,7 @@ import com.valdosm.course.entities.User;
 import com.valdosm.course.service.UserService;
 
 @RestController
-@RequestMapping(value = "/courses")
+@RequestMapping(value = "/users")
 public class UserResource {
     @Autowired
     private UserService userService;
