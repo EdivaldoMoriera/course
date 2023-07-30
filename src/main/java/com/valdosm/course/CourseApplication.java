@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.valdosm.course.entities.Order;
 import com.valdosm.course.entities.User;
+import com.valdosm.course.entities.enums.OrderStatus;
 import com.valdosm.course.repository.OrderRepository;
 import com.valdosm.course.repository.UserRepository;
 
@@ -30,9 +31,9 @@ public class CourseApplication implements CommandLineRunner{
 		User user2 = new User(null, "Edivaldo", "valdosm.moriera@gmail.com", "25478451", "3245@");
 		User user3 = new User(null, "carlos", "carlos@hmail.com", "88263653", "000000@");
 
-		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), user1);
-        Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), user2);
-        Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), user1); 
+		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"), OrderStatus.WAITING_PAYMENT, user1);
+        Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.CANCELED, user2);
+        Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.SHIPPED, user1); 
 		
 		userRepository.saveAll(Arrays.asList(user1, user2, user3));
 
