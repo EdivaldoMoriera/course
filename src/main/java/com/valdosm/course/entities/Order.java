@@ -57,7 +57,7 @@ public class Order implements Serializable {
     public void setMoment(Instant moment) {
         this.moment = moment;
     }
-
+   /*  */
     public OrderStatus getOrderStatus() {
         return OrderStatus.valueOf(orderStatus);
     }
